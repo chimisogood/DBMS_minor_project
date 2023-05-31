@@ -1,0 +1,36 @@
+Product:
+
+product_id (Primary Key)
+product_name
+description
+price
+quantity_in_stock
+reorder_threshold
+Category:
+
+category_id (Primary Key)
+category_name
+Supplier:
+
+supplier_id (Primary Key)
+supplier_name
+contact_person
+email
+phone_number
+Inventory:
+
+inventory_id (Primary Key)
+product_id (Foreign Key referencing Product)
+quantity
+date_added
+Relationships:
+
+One-to-Many relationship between Category and Product:
+
+category_id (in Category table) as Foreign Key referencing category_id (in Product table)
+One-to-Many relationship between Supplier and Product:
+
+supplier_id (in Supplier table) as Foreign Key referencing supplier_id (in Product table)
+One-to-Many relationship between Product and Inventory:
+
+product_id (in Product table) as Foreign Key referencing product_id (in Inventory table)
